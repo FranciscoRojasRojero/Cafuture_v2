@@ -33,10 +33,16 @@ class LoginActivity : AppCompatActivity() {
         val login = findViewById<Button>(R.id.login)
         val loading = findViewById<ProgressBar>(R.id.loading)
         val btnSig = findViewById<Button>(R.id.btnSig)
+        val btnAnt = findViewById<Button>(R.id.btnAnt)
 
         btnSig.setOnClickListener{
             val intent: Intent = Intent (this, SegundoActivity::class.java)
             startActivity(intent)
+        }
+
+        btnAnt.setOnClickListener{
+            val intent2 : Intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent2)
         }
 
         loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
