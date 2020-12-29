@@ -25,6 +25,6 @@
     <fragment
         android:id="@+id/dulces"
         android:name="com.francisco.cafuture_v2.Dulces"
-        android:label="fragment_dulces"
+        android:label="Dulces"
         tools:layout="@layout/fragment_dulces" />
 </navigation>
