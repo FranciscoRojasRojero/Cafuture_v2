@@ -17,8 +17,9 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/dulces"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Dulces" />
     </group>
-    <item
-        android:id="@+id/Dulces"
-        android:title="Dulces" />
 </menu>
