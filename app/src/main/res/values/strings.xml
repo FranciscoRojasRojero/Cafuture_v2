@@ -20,4 +20,6 @@
     <string name="menu_home">Inicio</string>
     <string name="menu_gallery">Menú</string>
     <string name="menu_slideshow">Combos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
