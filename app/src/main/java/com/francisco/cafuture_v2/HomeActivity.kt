@@ -12,13 +12,18 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 
-class SegundoActivity : AppCompatActivity() {
+enum class ProviderType{
+    BASIC
+}
+
+class HomeActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_segundo)
+        setContentView(R.layout.activity_home)
+
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
@@ -29,13 +34,15 @@ class SegundoActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.menu_dulces, R.id.categoria1
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.menu_dulces, R.id.categoriaActivity1
                 , R.id.categoria2, R.id.categoria3, R.id.categoria4, R.id.categoria5
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.

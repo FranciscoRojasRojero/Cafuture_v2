@@ -23,7 +23,7 @@
         android:title="@string/nombre_menu">
         <menu>
             <item
-                android:id="@+id/categoria1"
+                android:id="@+id/categoriaActivity1"
                 android:title="@string/categoria1"
             />
             <item

@@ -28,11 +28,6 @@
         android:label="Dulces"
         tools:layout="@layout/fragment_dulces" />
     <fragment
-        android:id="@+id/categoria1"
-        android:name="com.francisco.cafuture_v2.categoria1"
-        android:label="@string/categoria1"
-        tools:layout="@layout/fragment_categoria1" />
-    <fragment
         android:id="@+id/categoria2"
         android:name="com.francisco.cafuture_v2.categoria2"
         android:label="@string/categoria2"
@@ -52,4 +47,9 @@
         android:name="com.francisco.cafuture_v2.categoria5"
         android:label="@string/categoria5"
         tools:layout="@layout/fragment_categoria5" />
+    <activity
+        android:id="@+id/categoriaActivity1"
+        android:name="com.francisco.cafuture_v2.categoriaActivity1"
+        android:label="@string/categoria1"
+        tools:layout="@layout/activity_categoria1" />
 </navigation>
