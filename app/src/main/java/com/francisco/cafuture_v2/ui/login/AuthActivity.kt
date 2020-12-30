@@ -1,6 +1,7 @@
 package com.francisco.cafuture_v2.ui.login
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -15,9 +16,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 
 import com.francisco.cafuture_v2.R
-import com.francisco.cafuture_v2.SegundoActivity
+import com.francisco.cafuture_v2.HomeActivity
+import com.francisco.cafuture_v2.ProviderType
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
 
@@ -26,20 +31,22 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_auth)
 
-        val username = findViewById<EditText>(R.id.username)
+        /*val username = findViewById<EditText>(R.id.username)
         val password = findViewById<EditText>(R.id.password)
         val login = findViewById<Button>(R.id.login)
-        val loading = findViewById<ProgressBar>(R.id.loading)
+        val create = findViewById<Button>(R.id.create)
+        val loading = findViewById<ProgressBar>(R.id.loading)*/
         val btnSig = findViewById<Button>(R.id.btnSig)
 
         btnSig.setOnClickListener{
-            val intent: Intent = Intent (this, SegundoActivity::class.java)
+            val intent: Intent = Intent (this, HomeActivity::class.java)
             startActivity(intent)
         }
-
-        loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
+        //Setup
+        setup1()
+        /**loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
                 .get(LoginViewModel::class.java)
 
         loginViewModel.loginFormState.observe(this@LoginActivity, Observer {
@@ -56,7 +63,7 @@ class LoginActivity : AppCompatActivity() {
             }
         })
 
-        loginViewModel.loginResult.observe(this@LoginActivity, Observer {
+        /**loginViewModel.loginResult.observe(this@LoginActivity, Observer {
             val loginResult = it ?: return@Observer
 
             loading.visibility = View.GONE
@@ -70,7 +77,7 @@ class LoginActivity : AppCompatActivity() {
 
             //Complete and destroy login activity once successful
             finish()
-        })
+        })*/
 
         username.afterTextChanged {
             loginViewModel.loginDataChanged(
@@ -101,12 +108,71 @@ class LoginActivity : AppCompatActivity() {
             login.setOnClickListener {
                 loading.visibility = View.VISIBLE
                 loginViewModel.login(username.text.toString(), password.text.toString())
-            }
+            }*/
 
+
+    }
+    private fun setup1(){
+        val create = findViewById<Button>(R.id.create)
+        val login = findViewById<Button>(R.id.login)
+        val username = findViewById<EditText>(R.id.username)
+        val password= findViewById<EditText>(R.id.password)
+        title = "Autentificación"
+        create.setOnClickListener{
+            if (username.text.isNotEmpty() && password.text.isNotEmpty()){
+
+                FirebaseAuth.getInstance().createUserWithEmailAndPassword(username.text.toString(),
+                    password.text.toString()).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        showHome(it.result?.user?.email?:"", ProviderType.BASIC)
+                    }else{
+                        showAlert1()
+                    }
+                }
+            }
+        }
+        login.setOnClickListener{
+            if (username.text.isNotEmpty() && password.text.isNotEmpty()){
+
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(username.text.toString(),
+                    password.text.toString()).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        showHome(it.result?.user?.email?:"", ProviderType.BASIC)
+                    }else{
+                        showAlert2()
+                    }
+                }
+            }
         }
     }
+    private fun showHome(email: String, provider: ProviderType) {
+        val intent: Intent = Intent (this, HomeActivity::class.java).apply{
+            putExtra("email",email)
+            putExtra("provider",provider.name)
+        }
+        startActivity(intent)
+    }
 
-    private fun updateUiWithUser(model: LoggedInUserView) {
+    private fun showAlert1(){
+        val builder=AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("Se ha producido un error registrando al usuario")
+        builder.setPositiveButton("Aceptar",null)
+        val dialog:AlertDialog=builder.create()
+        dialog.show()
+    }
+    private fun showAlert2(){
+        val builder=AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("Correo y/o contraseña incorrectos")
+        builder.setPositiveButton("Aceptar",null)
+        val dialog:AlertDialog=builder.create()
+        dialog.show()
+    }
+
+}
+
+    /**private fun updateUiWithUser(model: LoggedInUserView) {
         val welcome = getString(R.string.welcome)
         val displayName = model.displayName
         // TODO : initiate successful logged in experience
@@ -120,12 +186,12 @@ class LoginActivity : AppCompatActivity() {
     private fun showLoginFailed(@StringRes errorString: Int) {
         Toast.makeText(applicationContext, errorString, Toast.LENGTH_SHORT).show()
     }
-}
+}*/
 
 /**
  * Extension function to simplify setting an afterTextChanged action to EditText components.
  */
-fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
+/**fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
     this.addTextChangedListener(object : TextWatcher {
         override fun afterTextChanged(editable: Editable?) {
             afterTextChanged.invoke(editable.toString())
@@ -135,4 +201,4 @@ fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
 
         override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
     })
-}
+}*/

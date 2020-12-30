@@ -22,4 +22,34 @@
         android:name="com.francisco.cafuture_v2.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/menu_dulces"
+        android:name="com.francisco.cafuture_v2.Dulces"
+        android:label="Dulces"
+        tools:layout="@layout/fragment_dulces" />
+    <fragment
+        android:id="@+id/categoria2"
+        android:name="com.francisco.cafuture_v2.categoria2"
+        android:label="@string/categoria2"
+        tools:layout="@layout/fragment_categoria2" />
+    <fragment
+        android:id="@+id/categoria3"
+        android:name="com.francisco.cafuture_v2.categoria3"
+        android:label="@string/categoria3"
+        tools:layout="@layout/fragment_categoria3" />
+    <fragment
+        android:id="@+id/categoria4"
+        android:name="com.francisco.cafuture_v2.categoria4"
+        android:label="@string/categoria4"
+        tools:layout="@layout/fragment_categoria4" />
+    <fragment
+        android:id="@+id/categoria5"
+        android:name="com.francisco.cafuture_v2.categoria5"
+        android:label="@string/categoria5"
+        tools:layout="@layout/fragment_categoria5" />
+    <activity
+        android:id="@+id/categoriaActivity1"
+        android:name="com.francisco.cafuture_v2.categoriaActivity1"
+        android:label="@string/categoria1"
+        tools:layout="@layout/activity_categoria1" />
 </navigation>
