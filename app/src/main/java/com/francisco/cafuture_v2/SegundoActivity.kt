@@ -29,7 +29,8 @@ class SegundoActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.dulces
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.menu_dulces, R.id.categoria1
+                , R.id.categoria2, R.id.categoria3, R.id.categoria4, R.id.categoria5
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
