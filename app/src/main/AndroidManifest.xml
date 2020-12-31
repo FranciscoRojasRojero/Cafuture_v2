@@ -10,11 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cafuture_v2">
         <activity
-            android:name=".categoriaActivity1"
-            android:label="@string/title_activity_categoria1"
-            android:theme="@style/Theme.Cafuture_v2.NoActionBar"></activity>
-        <activity
-            android:name=".HomeActivity"
+        android:name=".categoriaActivity1"
+            android:parentActivityName=".HomeActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeActivity" />
+        android:label="@string/title_activity_categoria1"
+        android:theme="@style/Theme.Cafuture_v2.NoActionBar"></activity>
+    <activity
+
+
+        android:name=".HomeActivity"
             android:label="@string/title_activity_segundo"
             android:theme="@style/Theme.Cafuture_v2.NoActionBar" />
         <activity
