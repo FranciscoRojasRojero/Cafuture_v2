@@ -22,6 +22,7 @@ import androidx.core.content.ContextCompat.startActivity
 import com.francisco.cafuture_v2.R
 import com.francisco.cafuture_v2.HomeActivity
 import com.francisco.cafuture_v2.ProviderType
+import com.francisco.cafuture_v2.RegistryActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
@@ -43,6 +44,7 @@ class LoginActivity : AppCompatActivity() {
         btnSig.setOnClickListener{
             val intent: Intent = Intent (this, HomeActivity::class.java)
             startActivity(intent)
+            finish()
         }
         //Setup
         setup1()
@@ -113,23 +115,13 @@ class LoginActivity : AppCompatActivity() {
 
     }
     private fun setup1(){
-        val create = findViewById<Button>(R.id.create)
+        val register = findViewById<Button>(R.id.register)
         val login = findViewById<Button>(R.id.login)
         val username = findViewById<EditText>(R.id.username)
         val password= findViewById<EditText>(R.id.password)
-        title = "Autentificación"
-        create.setOnClickListener{
-            if (username.text.isNotEmpty() && password.text.isNotEmpty()){
-
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(username.text.toString(),
-                    password.text.toString()).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        showHome(it.result?.user?.email?:"", ProviderType.BASIC)
-                    }else{
-                        showAlert1()
-                    }
-                }
-            }
+        register.setOnClickListener{
+            val intent: Intent=Intent(this, RegistryActivity::class.java)
+            startActivity(intent)
         }
         login.setOnClickListener{
             if (username.text.isNotEmpty() && password.text.isNotEmpty()){
@@ -138,8 +130,9 @@ class LoginActivity : AppCompatActivity() {
                     password.text.toString()).addOnCompleteListener {
                     if (it.isSuccessful) {
                         showHome(it.result?.user?.email?:"", ProviderType.BASIC)
+                        finish()
                     }else{
-                        showAlert2()
+                        showAlert()
                     }
                 }
             }
@@ -153,15 +146,7 @@ class LoginActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun showAlert1(){
-        val builder=AlertDialog.Builder(this)
-        builder.setTitle("Error")
-        builder.setMessage("Se ha producido un error registrando al usuario")
-        builder.setPositiveButton("Aceptar",null)
-        val dialog:AlertDialog=builder.create()
-        dialog.show()
-    }
-    private fun showAlert2(){
+    private fun showAlert(){
         val builder=AlertDialog.Builder(this)
         builder.setTitle("Error")
         builder.setMessage("Correo y/o contraseña incorrectos")
