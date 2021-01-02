@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="menu_carreras">
+        <item>Seleccione</item>
+        <item>Preparatoria</item>
+        <item>Ing. Ambientales</item>
+        <item>Ing. Sistemas computacionales</item>
+        <item>Ing. Mecatronica</item>
+        <item>Ing. Metalurgica</item>
+    </string-array>
+</resources>
