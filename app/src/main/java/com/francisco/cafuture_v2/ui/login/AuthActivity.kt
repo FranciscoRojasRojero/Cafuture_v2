@@ -18,11 +18,8 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
+import com.francisco.cafuture_v2.*
 
-import com.francisco.cafuture_v2.R
-import com.francisco.cafuture_v2.HomeActivity
-import com.francisco.cafuture_v2.ProviderType
-import com.francisco.cafuture_v2.RegistryActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
@@ -42,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
         val btnSig = findViewById<Button>(R.id.btnSig)
 
         btnSig.setOnClickListener{
-            val intent: Intent = Intent (this, HomeActivity::class.java)
+            val intent = Intent (this, HomeActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -120,7 +117,7 @@ class LoginActivity : AppCompatActivity() {
         val username = findViewById<EditText>(R.id.username)
         val password= findViewById<EditText>(R.id.password)
         register.setOnClickListener{
-            val intent: Intent=Intent(this, RegistryActivity::class.java)
+            val intent =Intent(this, RegistryJavaActivity::class.java)
             startActivity(intent)
         }
         login.setOnClickListener{

@@ -12,6 +12,12 @@
     <string name="invalid_password">La contraseña debe de ser de por lo menos 5 caracteres</string>
     <string name="login_failed">"Login failed"</string>
 
+    //Actividad Registro
+
+    <string name="nombre_usuario">Nombre</string>
+    <string name="edad_usuario">Edad</string>
+
+
     //Home activity
     <string name="title_activity_segundo">SegundoActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
