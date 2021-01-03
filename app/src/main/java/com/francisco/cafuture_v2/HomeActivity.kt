@@ -36,7 +36,7 @@ class HomeActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.menu_dulces, R.id.categoriaActivity1
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.menu_dulces, R.id.menu_categoria_1
                 , R.id.categoria2, R.id.categoria3, R.id.categoria4, R.id.categoria5
             ), drawerLayout
         )
@@ -59,7 +59,7 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        val intent: Intent = Intent (this, LoginActivity::class.java)
+        val intent = Intent (this, LoginActivity::class.java)
         startActivity(intent)
     }
 }
