@@ -28,11 +28,6 @@
         android:label="Dulces"
         tools:layout="@layout/fragment_dulces" />
     <fragment
-        android:id="@+id/categoria2"
-        android:name="com.francisco.cafuture_v2.categoria2"
-        android:label="@string/categoria2"
-        tools:layout="@layout/fragment_categoria2" />
-    <fragment
         android:id="@+id/categoria3"
         android:name="com.francisco.cafuture_v2.categoria3"
         android:label="@string/categoria3"
@@ -48,8 +43,18 @@
         android:label="@string/categoria5"
         tools:layout="@layout/fragment_categoria5" />
     <activity
-        android:id="@+id/categoriaActivity1"
-        android:name="com.francisco.cafuture_v2.categoriaActivity1"
-        android:label="@string/categoria1"
-        tools:layout="@layout/activity_categoria1" />
+        android:id="@+id/loginActivity"
+        android:name="com.francisco.cafuture_v2.ui.login.LoginActivity"
+        android:label="activity_auth"
+        tools:layout="@layout/activity_auth" />
+    <activity
+        android:id="@+id/registryActivity"
+        android:name="com.francisco.cafuture_v2.RegistryActivity"
+        android:label="activity_registry"
+        tools:layout="@layout/activity_registry" />
+    <activity
+        android:id="@+id/menu_categoria_1"
+        android:name="com.francisco.cafuture_v2.ui.menu_categoria_1"
+        android:label="activity_menu_categoria_1"
+        tools:layout="@layout/activity_menu_categoria_1" />
 </navigation>
