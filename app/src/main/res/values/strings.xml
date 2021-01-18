@@ -36,6 +36,9 @@
     <string name="menu_dulces">Dulces</string>
 
     <string name="postres">Postres</string>
+
+    <string name="comida_mexicana">Comida mexicana</string>
+
     <string name="Postres">Postres</string>
     <string name="PostresAdapter">PostresAdapter</string>
 

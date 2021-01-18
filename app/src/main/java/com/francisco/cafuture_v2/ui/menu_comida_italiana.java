@@ -11,7 +11,7 @@ import com.francisco.cafuture_v2.R;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
-public class menu_categoria_1 extends AppCompatActivity {
+public class menu_comida_italiana extends AppCompatActivity {
 
     RecyclerView recyclerViewMenu;
     MenuAdapter mAdapter;
@@ -19,15 +19,15 @@ public class menu_categoria_1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_categoria_1);
+        setContentView(R.layout.activity_menu_comida_italiana);
 
-        recyclerViewMenu = findViewById(R.id.recyclerMenu1);
+        recyclerViewMenu = findViewById(R.id.recyclerMenu_comida_italiana);
         recyclerViewMenu.setLayoutManager(new LinearLayoutManager(this));
         mFirestore= FirebaseFirestore.getInstance();
 
         //Query query = mFirestore.collection("prueba");
         //Query query = mFirestore.collection("cafes");
-        Query query = mFirestore.collection("/cafes/Ww7dV8tl5vN2ii6XhUGlM3dSQ873/categorias_menu/6yulH4792QaPrw6Fl64C/menu");
+        Query query = mFirestore.collection("/cafes/Ww7dV8tl5vN2ii6XhUGlM3dSQ873/categorias_menu/DZwEgOO2yThsPA0m1e1w/menu");
         //Query query = mFirestore.collection("prueba");
 
         FirestoreRecyclerOptions<Menu>firestoreRecyclerOptions=new FirestoreRecyclerOptions.Builder<Menu>().setQuery(query, Menu.class).build();

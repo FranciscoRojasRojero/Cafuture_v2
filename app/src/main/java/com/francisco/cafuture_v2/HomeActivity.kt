@@ -36,7 +36,7 @@ class HomeActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.menu_dulces, R.id.Postres_mostrar, R.id.menu_categoria_1
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.menu_dulces, R.id.menu_comida_mexicana, R.id.menu_comida_italiana, R.id.menu_postres
                 , R.id.categoria2, R.id.categoria3, R.id.categoria4, R.id.categoria5
             ), drawerLayout
         )
@@ -44,8 +44,9 @@ class HomeActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
 
-    }
 
+
+    }
 
 
 

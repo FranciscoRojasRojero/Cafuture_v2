@@ -10,18 +10,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cafuture_v2">
-        <activity android:name=".ui.menu_categoria_1"></activity>
-        <activity android:name=".ui.Postres_mostrar"></activity>
+        <activity android:name=".ui.menu_comida_italiana"></activity>
+        <activity android:name=".ui.menu_comida_mexicana" />
+        <activity android:name=".ui.menu_postres" />
         <activity
             android:name=".ui.Postres"
             android:label="@string/Postres"
-            tools:ignore="Instantiatable">
-        </activity>
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".ui.PostresAdapter"
             android:label="@string/PostresAdapter"
-            tools:ignore="Instantiatable">
-        </activity>
+            tools:ignore="Instantiatable" />
         <activity android:name=".RegistryJavaActivity" />
         <activity
             android:name=".HomeActivity"
