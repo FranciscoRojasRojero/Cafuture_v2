@@ -35,6 +35,16 @@
     <string name="menu_slideshow">Combos</string>
     <string name="menu_dulces">Dulces</string>
 
+    <string name="postres">Postres</string>
+
+    <string name="comida_mexicana">Comida mexicana</string>
+
+    <string name="Postres">Postres</string>
+    <string name="PostresAdapter">PostresAdapter</string>
+
+    <string name="carrito">Ir al carrito</string>
+
+
     <string name="categoria1">Gorditas</string>
     <string name="categoria2">Tortas</string>
     <string name="categoria3">Flautas</string>
@@ -44,3 +54,4 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_categoria1">categoriaActivity1</string>
 </resources>
+

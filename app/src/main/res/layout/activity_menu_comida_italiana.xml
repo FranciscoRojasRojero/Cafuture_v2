@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.menu_categoria_1">
+    tools:context=".ui.menu_comida_italiana">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerMenu1"
+        android:id="@+id/recyclerMenu_comida_italiana"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"

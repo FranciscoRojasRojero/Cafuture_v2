@@ -23,12 +23,20 @@
         android:title="@string/nombre_menu">
         <menu>
             <item
-                android:id="@+id/menu_categoria_1"
-                android:title="@string/categoria1"
+                android:id="@+id/Postres_mostrar"
+                android:title="@string/carrito"
             />
             <item
-                android:id="@+id/categoria2"
-                android:title="@string/categoria2"
+                android:id="@+id/menu_postres"
+                android:title="@string/postres"
+            />
+            <item
+                android:id="@+id/menu_comida_mexicana"
+                android:title="@string/comida_mexicana"
+                />
+            <item
+                android:id="@+id/menu_comida_italiana"
+                android:title="Comida italiana"
                 />
             <item
                 android:id="@+id/categoria3"

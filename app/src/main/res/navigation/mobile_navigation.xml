@@ -53,8 +53,18 @@
         android:label="activity_registry"
         tools:layout="@layout/activity_registry" />
     <activity
-        android:id="@+id/menu_categoria_1"
-        android:name="com.francisco.cafuture_v2.ui.menu_categoria_1"
-        android:label="activity_menu_categoria_1"
-        tools:layout="@layout/activity_menu_categoria_1" />
+        android:id="@+id/menu_postres"
+        android:name="com.francisco.cafuture_v2.ui.menu_postres"
+        android:label="activity_menu_postres"
+        tools:layout="@layout/activity_menu_postres" />
+    <activity
+        android:id="@+id/menu_comida_mexicana"
+        android:name="com.francisco.cafuture_v2.ui.menu_comida_mexicana"
+        android:label="activity_menu_comida_mexicana"
+        tools:layout="@layout/activity_menu_comida_mexicana" />
+    <activity
+        android:id="@+id/menu_comida_italiana"
+        android:name="com.francisco.cafuture_v2.ui.menu_comida_italiana"
+        android:label="activity_menu_comida_italiana"
+        tools:layout="@layout/activity_menu_comida_italiana" />
 </navigation>
