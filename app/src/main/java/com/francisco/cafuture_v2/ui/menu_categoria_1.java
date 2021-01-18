@@ -25,13 +25,18 @@ public class menu_categoria_1 extends AppCompatActivity {
         recyclerViewMenu.setLayoutManager(new LinearLayoutManager(this));
         mFirestore= FirebaseFirestore.getInstance();
 
-        Query query = mFirestore.collection("prueba");
+        //Query query = mFirestore.collection("prueba");
+        //Query query = mFirestore.collection("cafes");
+        Query query = mFirestore.collection("/cafes/Ww7dV8tl5vN2ii6XhUGlM3dSQ873/categorias_menu/6yulH4792QaPrw6Fl64C/menu");
+        //Query query = mFirestore.collection("prueba");
 
         FirestoreRecyclerOptions<Menu>firestoreRecyclerOptions=new FirestoreRecyclerOptions.Builder<Menu>().setQuery(query, Menu.class).build();
 
-        mAdapter = new MenuAdapter(firestoreRecyclerOptions);
+        mAdapter = new MenuAdapter(firestoreRecyclerOptions); //Checar clase MenuAdapter
         mAdapter.notifyDataSetChanged();
         recyclerViewMenu.setAdapter(mAdapter);
+
+
     }
 
     @Override

@@ -92,7 +92,7 @@
         android:layout_width="70dp"
         android:layout_height="28dp"
         android:layout_marginStart="16dp"
-        android:text="Estado:"
+        android:text="Carrera:"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintStart_toStartOf="parent"

@@ -23,6 +23,11 @@
         android:title="@string/nombre_menu">
         <menu>
             <item
+                android:id="@+id/Postres_mostrar"
+                android:title="@string/postres"
+                android:onClick="open_postres_activity"
+                />
+            <item
                 android:id="@+id/categoria1"
                 android:title="@string/categoria1"
             />
