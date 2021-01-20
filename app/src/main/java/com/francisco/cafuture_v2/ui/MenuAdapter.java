@@ -27,9 +27,30 @@ public class MenuAdapter extends FirestoreRecyclerAdapter<Menu, MenuAdapter.View
 
     @Override
     protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Menu menu) {
-        holder.textViewTitulo.setText(menu.getTitulo());
-        holder.textViewPrecio.setText(menu.getPrecio());
-        holder.textViewDescripcion.setText(menu.getDescripcion());
+        //Boolean isFollowing = (Boolean) dataSnapshot.getValue();
+        double postres_precio=menu.getPrice();
+        double postres_tiempo=menu.getTime();
+        boolean postres_disponibilidad= (Boolean) menu.isAvailable();
+
+        String postres_price = String.valueOf(postres_precio);
+        String postres_time = String.valueOf(postres_tiempo);
+        String postres_available = "";
+
+
+        if(postres_disponibilidad){
+            postres_available = "Disponible";
+        }
+        else{
+            postres_available = "No disponible";
+        }
+
+
+        holder.textViewName.setText(menu.getName());
+        holder.textViewPrice.setText("$" + postres_price);
+        holder.textViewTime.setText(postres_time + " minutos");
+        holder.textViewImg.setText(menu.getImg());
+        holder.textViewDescription.setText(menu.getDescription());
+        holder.textViewAvailable.setText(postres_available);
     }
 
     @NonNull
@@ -41,16 +62,33 @@ public class MenuAdapter extends FirestoreRecyclerAdapter<Menu, MenuAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView textViewTitulo;
+        TextView textViewName;
+        TextView textViewPrice;
+        TextView textViewTime;
+        TextView textViewImg;
+        TextView textViewDescription;
+        TextView textViewAvailable;
+
+        /*
         TextView textViewDescripcion;
         TextView textViewPrecio;
+        */
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            /*
             textViewTitulo=itemView.findViewById(R.id.txt_title);
             textViewDescripcion=itemView.findViewById(R.id.txt_precio);
             textViewPrecio=itemView.findViewById(R.id.txt_desc);
+
+             */
+            textViewName=itemView.findViewById(R.id.txt_postres_name);
+            textViewPrice=itemView.findViewById(R.id.txt_postres_price);
+            textViewTime=itemView.findViewById(R.id.txt_postres_time);
+            textViewImg=itemView.findViewById(R.id.txt_postres_img);
+            textViewDescription=itemView.findViewById(R.id.txt_postres_desc);
+            textViewAvailable=itemView.findViewById(R.id.txt_postres_available);
 
         }
     }

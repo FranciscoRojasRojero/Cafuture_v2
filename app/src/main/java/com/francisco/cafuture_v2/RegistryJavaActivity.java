@@ -1,6 +1,5 @@
 package com.francisco.cafuture_v2;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,11 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -46,10 +42,18 @@ public class RegistryJavaActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore mFireStore;
 
+    /*
+    public void open_postres_activity(View view){
+        Intent intent = new Intent (this, Postres_mostrar.class);
+        startActivity(intent);
+    }
+
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registry_java);
+        setContentView(R.layout.activity_registry_java); //Muestra visualmente la activity (diseño)
 
         mAuth=FirebaseAuth.getInstance();
         mFireStore=FirebaseFirestore.getInstance();
@@ -61,12 +65,12 @@ public class RegistryJavaActivity extends AppCompatActivity {
         mEditTextEdad= findViewById(R.id.edad_usuario);
         mEditTextEmail= findViewById(R.id.email);
         mEditTextPassword= findViewById(R.id.password);
-        mButtonRegister= findViewById(R.id.register2);
+        mButtonRegister= findViewById(R.id.register2); // mButtonRegister lo encontramos de los recursos, con el id register2
 
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this, R.array.menu_carreras, android.R.layout.simple_spinner_item);
-        comboCarreras.setAdapter(adapter);
+        comboCarreras.setAdapter(adapter); //Adaptador de las carreras, en el segundo parametro recibe del objeto Resources, el arreglo menu_carreras
 
-        mButtonRegister.setOnClickListener(v -> {
+        mButtonRegister.setOnClickListener(v -> { //
             name=mEditTextName.getText().toString();
             apellidos=mEditTextApellidos.getText().toString();
             edad=mEditTextEdad.getText().toString();
@@ -74,7 +78,7 @@ public class RegistryJavaActivity extends AppCompatActivity {
             password=mEditTextPassword.getText().toString();
             comboCarreras.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) { //Recupera las carreras disponibles para mostrarlas en el spinner
                     carrera=parent.getItemAtPosition(position).toString();
                 }
 
@@ -96,6 +100,8 @@ public class RegistryJavaActivity extends AppCompatActivity {
             }
         });
     }
+
+
 
     private void registerUser(){
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
@@ -120,7 +126,7 @@ public class RegistryJavaActivity extends AppCompatActivity {
                 }).addOnFailureListener(e -> Toast.makeText(RegistryJavaActivity.this, "No se pudieron crear los datos correctamente", Toast.LENGTH_SHORT).show());
 
             }else{
-                Toast.makeText(RegistryJavaActivity.this, "No se a podido registrar", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegistryJavaActivity.this, "No se ha podido registrar", Toast.LENGTH_SHORT).show();
             }
         });
     }
