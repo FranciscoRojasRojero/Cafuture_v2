@@ -67,4 +67,9 @@
         android:name="com.francisco.cafuture_v2.ui.menu_comida_italiana"
         android:label="activity_menu_comida_italiana"
         tools:layout="@layout/activity_menu_comida_italiana" />
+    <activity
+        android:id="@+id/carrito"
+        android:name="com.francisco.cafuture_v2.ui.carrito"
+        android:label="activity_carrito"
+        tools:layout="@layout/activity_carrito" />
 </navigation>

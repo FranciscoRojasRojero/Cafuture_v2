@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cafuture_v2">
-        <activity android:name=".ui.menu_comida_italiana"></activity>
+        <activity android:name=".ui.carrito"></activity>
+        <activity android:name=".ui.menu_comida_italiana" />
         <activity android:name=".ui.menu_comida_mexicana" />
         <activity android:name=".ui.menu_postres" />
         <activity

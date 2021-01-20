@@ -23,7 +23,7 @@
         android:title="@string/nombre_menu">
         <menu>
             <item
-                android:id="@+id/Postres_mostrar"
+                android:id="@+id/carrito"
                 android:title="@string/carrito"
             />
             <item
